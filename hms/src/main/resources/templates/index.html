@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hotel Management System</title>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.5.3/css/bootstrap.min.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://p7.hiclipart.com/preview/592/502/329/logo-application-programming-interface-computer-programming-application-software-api-thumbnail.jpg" />
+    <script type="text/javascript" src="webjars/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--Background image-->
+<!--    <div style="background-image: url('https://cdn.sisense.com/wp-content/uploads/RestAPI_Featured_1200X6281.jpg'); background-size: cover; height: 100vh;"></div>-->
+<!--    Add an image to the top right of the web page-->
+        <div class="image-wrapper">
+            <img src="https://voyager.postman.com/illustration/rest-client/rest-client-hero-postman.svg" alt="Image Description">
+        </div>
+    <!--Only welcome page as this is backend API only-->
+    <div class="container">
+        <!--Center the welcome message with neat shadowing-->
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <h1 class="text-center shadow-lg p-3 mb-5 bg-white rounded">Welcome to Hostel Management System API</h1>
+                <h2 class="text-center shadow-lg p-3 mb-5 bg-white rounded">API is now up and running!</h2>
+                <div class="test">
+                    <h3 class="text-center shadow-lg p-3 mb-5 bg-white rounded">You can also manually test this API via<br> postman for the following functions...</h3>
+                    <!--a list of what functionalities the API could do-->
+                    <ul class="list-group">
+                        <li class="list-group" style="list-style-type: none;">1. Search and get details</li>
+                        <li class="list-group" style="list-style-type: none;">2. Add details</li>
+                        <li class="list-group" style="list-style-type: none;">3. Book rooms</li>
+                        <li class="list-group" style="list-style-type: none;">4. CRUD tables</li>
+                        <li class="list-group" style="list-style-type: none;">5. Approve rooms</li>
+                        <li class="list-group" style="list-style-type: none;">6. And much more...</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="end-text">
+        <i><b>Image(s) used for illustration only.</b></i>
+    </div>
+</body>
+<!--css to center the container-->
+<style>
+    /*whole css body font as .rajdhani-semibold*/
+    body {
+        font-family: "Rajdhani", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 20px;
+    }
+    .container {
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        transform: translate(-0%, -0%);
+        color: black;
+        text-shadow: 1px 3px 2px white;
+    }
+    .image-wrapper img {
+            width: 900px; /* Set maximum width for the image */
+            height: 600px; /* Maintain aspect ratio */
+            position: relative;
+            border-radius: 8px; /* Optional: Add border radius for rounded corners */
+            float: right;
+            left: -50px;
+            bottom: -100px
+    }
+    .end-text{
+        font-family: Arial, sans-serif;
+        position: absolute;
+        right: 15px;
+        bottom: 5px; /* Adjust this value as needed to position above the image */
+        font-size: 10px;
+        transform: rotate(90deg); /* Rotate the text to display vertically */
+        transform-origin: right bottom; /* Rotate around the bottom-right corner */
+    }
+
+</style>
+</html>
