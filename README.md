@@ -20,5 +20,5 @@ The Hostel Management System is a Spring Boot-based backend application designed
 ## Getting Started
 ### Clone the repository
 ```bash
-git clone https://github.com/yourusername/hostel-management-system.git
+git clone https://github.com/ramar-012/SpringBoot-HMS.git
 cd hostel-management-system
