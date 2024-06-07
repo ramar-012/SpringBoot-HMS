@@ -35,6 +35,12 @@ public class RoomController {
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
+    @GetMapping("/status/{status}")
+    public ResponseEntity<List<Room>> roomsByStatus(@PathVariable String status){
+        List<Room> rooms = roomService.roomsByStatus(status);
+        return new ResponseEntity<>(rooms, HttpStatus.OK);
+    }
+
     @PostMapping
     public ResponseEntity<Room> createRoom(@RequestBody Room room){
         if(roomService.isRoomPresent(room.getRoom_id())){

@@ -17,6 +17,9 @@ public interface RoomRepository extends JpaRepository<Room, Long>{
 //    //find rooms by room capacity
 //    List<Room> findByCapacity(int capacity);
 
+    //find rooms by status
+    List<Room> findByStatus(String status);
+
     //find rooms by hostel block
     //List<Room> findByHostelBlock(HostelBlock hostelBlock);
 

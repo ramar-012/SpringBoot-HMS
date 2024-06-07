@@ -43,4 +43,9 @@ public class RoomService {
     public void deleteRoomById(Long id) {
         roomRepository.deleteById(id);
     }
+
+    //method to find rooms by status
+    public List<Room> roomsByStatus(String status){
+        return roomRepository.findByStatus(status);
+    }
 }
