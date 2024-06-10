@@ -35,7 +35,7 @@ public class UserServiceTest {
     public void testFindAllUsers(){
         when(userRepository.findAll()).thenReturn(Arrays.asList(user1, user2));
         List<User> users = userService.findAllUsers();
-        Object[] userX = users.toArray();
+        //Object[] userX = users.toArray();
         try{
             assertEquals(2, users.size());
             verify(userRepository, times(1)).findAll();

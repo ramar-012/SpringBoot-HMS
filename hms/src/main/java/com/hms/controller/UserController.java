@@ -72,15 +72,17 @@ public class UserController {
         return new ResponseEntity<>(createdUser, HttpStatus.CREATED);
     }
 
-//    @PostMapping("/authenticate")
-//    public ResponseEntity<String> authenticateUser(@RequestBody UserLoginRequest userLoginRequest) {
-//        Authentication authentication = new UsernamePasswordAuthenticationToken(userLoginRequest.getUsername(), userLoginRequest.getPassword());
-//        Authentication authenticated = authenticationManager.authenticate(authentication);
-//
-//        SecurityContextHolder.getContext().setAuthentication(authenticated);
-//
-//        return new ResponseEntity<>("Authenticated successfully", HttpStatus.OK);
-//    }
+/*
+    @PostMapping("/authenticate")
+    public ResponseEntity<String> authenticateUser(@RequestBody UserLoginRequest userLoginRequest) {
+        Authentication auth = new UsernamePasswordAuthenticationToken(userLoginRequest.getUsername(), userLoginRequest.getPassword());
+        Authentication authenticated = authenticationManager.authenticate(auth);
+
+        SecurityContextHolder.getContext().setAuthentication(authenticated);
+
+        return new ResponseEntity<>("Authenticated successfully", HttpStatus.OK);
+    }
+*/
 
     @PutMapping("/{id}")
     public ResponseEntity<User> updateUser(@PathVariable long id, @RequestBody User user){
