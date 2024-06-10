@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.hms.service.UserServiceTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 s - in com.hms.service.UserServiceTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 s - in com.hms.service.UserServiceTest
