@@ -2,19 +2,15 @@ package com.hms.service;
 
 import com.hms.entity.User;
 import com.hms.repository.UserRepository;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
+import org.junit.jupiter.api.*;
+import org.mockito.*;
 
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 public class UserServiceTest {
@@ -43,11 +39,9 @@ public class UserServiceTest {
         try{
             assertEquals(2, users.size());
             verify(userRepository, times(1)).findAll();
-            System.out.println("Test passed!");
+            System.out.println("Service: Find all users test passed!");
         } catch (Exception e){
-            System.out.println("Test failed " + e);
-        } finally {
-            users.forEach(System.out::println);
+            System.out.println("Service: Test failed " + e);
         }
     }
 
@@ -58,11 +52,9 @@ public class UserServiceTest {
         try{
             assertEquals(user1.getUsername(), foundUser.getUsername());
             verify(userRepository, times(1)).findById(1L);
-            System.out.println("Test passed!");
+            System.out.println("Service: Find user by ID test passed!");
         } catch (Exception ex){
-            System.out.println("Test failed " + ex);
-        } finally {
-            System.out.println(foundUser.toString());
+            System.out.println("Service: Test failed " + ex);
         }
     }
 
@@ -74,25 +66,22 @@ public class UserServiceTest {
             assertTrue(foundUser.isPresent());
             assertEquals(user1.getUsername(), foundUser.get().getUsername());
             verify(userRepository, times(1)).findByUsername("user1");
-            System.out.println("Test passed!");
+            System.out.println("Service: Find user by name test passed!");
         } catch (Exception e){
             System.out.println("Test failed "+ e);
-        } finally {
-            System.out.println(foundUser.toString());
         }
     }
 
     @Test
-    public void testDeleteUser(){
+    public void testCreateUser(){
         when(userRepository.save(user1)).thenReturn(user1);
         User savedUser = userService.saveUser(user1);
         try{
             assertEquals(user1.getUsername() , savedUser.getUsername());
             verify(userRepository, times(1)).save(user1);
+            System.out.println("Service: Create/Update user test passed!");
         } catch (Exception e){
-            System.out.println("Test failed "+ e);
-        } finally {
-            System.out.println(savedUser.toString());
+            System.out.println("Service: Test failed "+ e);
         }
     }
 
@@ -101,5 +90,6 @@ public class UserServiceTest {
         doNothing().when(userRepository).deleteById(1L);
         userService.deleteUserById(1L);
         verify(userRepository, times(1)).deleteById(1L);
+        System.out.println("Service: Delete user by ID test passed!");
     }
 }
